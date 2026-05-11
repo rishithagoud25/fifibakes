@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Epilogue", sans-serif;
+
+  --color-primary: #ab2554;
+  --color-primary-container: #cc406c;
+  --color-on-primary: #ffffff;
+  --color-primary-fixed: #ffd9df;
+  --color-primary-fixed-dim: #ffb1c2;
+  --color-on-primary-fixed: #3f0018;
+
+  --color-secondary: #745757;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fdd7d6;
+  --color-on-secondary-container: #795b5b;
+
+  --color-tertiary: #6e555e;
+  --color-tertiary-fixed: #fbdae4;
+  
+  --color-background: #fff8f2;
+  --color-surface: #fff8f2;
+  --color-surface-container: #f3ede7;
+  --color-surface-container-low: #f9f2ec;
+  --color-surface-container-highest: #e8e1dc;
+  
+  --color-on-surface: #1e1b18;
+  --color-on-surface-variant: #574145;
+  --color-outline-variant: #debfc4;
+
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans selection:bg-primary/20;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  .paper-texture {
+    position: relative;
+  }
+
+  .paper-texture::before {
+    content: "";
+    @apply absolute inset-0 opacity-5 pointer-events-none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBMUVrl3mU1E2p_Ai5oQYbxUkM8R-dtw-F9lECIYoVXerDus5rypRNef5p5Abg2iN97gxae1f3f5IWfYsN3cqe95TkDKfB5QjbejztX8dPz1OUjwv8AqqBIBUnUBr3ksVR7lAv999hLsnx-WdWPhsNuKqo4-l4uV1i1iqKJ_OfabpaDLdg-Amhvh-mab7E82oxhoSFz6dgrWYDNO-pIIie2--EuZSxGhJtJzDcmUmuOQdaeQOyAlutSQWI5llDxEZhp5EG70976Jsw);
+  }
+
+  .shadow-soft-cocoa {
+    box-shadow: 0 10px 30px rgba(107, 79, 79, 0.08);
+  }
+}
