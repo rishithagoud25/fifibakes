@@ -1,20 +1,113 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# fifibakes
 
-# Run and deploy your AI Studio app
+A modern, responsive bakery website created for my friend's baking business — **fifibakes**.
 
-This contains everything you need to run your app locally.
+The website is designed to showcase the bakery's products, highlight weekly favorites, and provide customers with an easy way to explore the menu and get in touch.
 
-View your app in AI Studio: https://ai.studio/apps/162e8f37-f940-4097-b0c1-2f5d001bbdd4
+## Live Website
 
-## Run Locally
+[Visit fifibakes](https://fifibakes.vercel.app/)
 
-**Prerequisites:**  Node.js
+## Features
 
+* Clean and welcoming home page
+* Bakery menu with product cards
+* Customer ratings and reviews
+* Shopping cart with quantity controls
+* Weekly favorites section
+* Responsive design for desktop and mobile
+* Product imagery
+* Contact section
+* Instagram integration
+* Modern UI with animations
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Tech Stack
+
+* **React** — Frontend framework
+* **TypeScript** — Type-safe JavaScript
+* **Tailwind CSS** — Styling and responsive design
+* **Motion** — Animations and transitions
+* **Lucide React** — Icons
+* **Vite** — Development and build tool
+* **Vercel** — Deployment
+
+## Project Structure
+
+```text
+fifi-bakes/
+├── public/
+│   └── images/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── constants/
+│   └── ...
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+```
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd fifi-bakes
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+The website will be available at the local development URL shown in your terminal.
+
+### 4. Build for production
+
+```bash
+npm run build
+```
+
+## Project Purpose
+
+This project was created as a real-world website for a friend's bakery business.
+
+The goal was to create a simple but attractive online presence where customers can:
+
+* Explore bakery products
+* View popular items
+* Add products to a cart
+* Check product details
+* Find contact information
+* Connect with the bakery through Instagram
+
+## Responsive Design
+
+The website is designed to work across different screen sizes, including:
+
+* Desktop
+* Mobile
+* Tablet
+
+## Deployment
+
+The website is deployed using Vercel.
+
+Live website: https://fifibakes.vercel.app/
+
+## Development
+
+AI tools were used as a development assistant for parts of the coding, debugging, and implementation process.
+
+## Author
+
+Created by **Rishitha Goud** as a website project for a friend.
