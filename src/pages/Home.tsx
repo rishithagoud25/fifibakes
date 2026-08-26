@@ -1,10 +1,27 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, Heart, Sparkles, CheckCircle2, ChevronRight, Clock } from 'lucide-react';
+import {
+  ShoppingBag,
+  Heart,
+  Sparkles,
+  CheckCircle2,
+  ChevronRight,
+  Clock,
+  Minus,
+  Plus
+} from 'lucide-react';
 import { IMAGES } from '../constants';
 import { StarRating } from '../components/StarRating';
 
-export default function Home({ onAddToCart }: { onAddToCart: (product: any) => void }) {
+export default function Home({
+  onAddToCart,
+  cartItems,
+  onUpdateQuantity
+}: {
+  onAddToCart: (product: any) => void;
+  cartItems: any[];
+  onUpdateQuantity: (id: number, delta: number) => void;
+}) {
   const featuredProducts = IMAGES.products.slice(0, 3);
 
   return (
@@ -109,13 +126,45 @@ export default function Home({ onAddToCart }: { onAddToCart: (product: any) => v
                   <StarRating rating={product.rating} />
                   <span className="text-xs font-bold text-on-surface-variant">({product.reviews})</span>
                 </div>
-                <button 
-                  onClick={() => onAddToCart(product)}
-                  className="w-full py-4 bg-[#4d3b3b] text-white rounded-2xl font-bold active:scale-95 transition-all hover:bg-[#3d2f2f] flex items-center justify-center gap-2"
-                >
-                  <ShoppingBag size={18} />
-                  Add to Cart
-                </button>
+                {(() => {
+  const cartItem = cartItems.find(
+    item => item.id === product.id
+  );
+
+  const quantity = cartItem?.quantity || 0;
+
+  return quantity === 0 ? (
+    <button
+      onClick={() => onAddToCart(product)}
+      className="w-full py-4 bg-[#4d3b3b] text-white rounded-2xl font-bold active:scale-95 transition-all hover:bg-[#3d2f2f] flex items-center justify-center gap-2"
+    >
+      <ShoppingBag size={18} />
+      Add to Cart
+    </button>
+  ) : (
+    <div className="w-full py-2 bg-[#4d3b3b] text-white rounded-2xl flex items-center justify-between px-3">
+
+      <button
+        onClick={() => onUpdateQuantity(product.id, -1)}
+        className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/10 active:scale-90 transition-all"
+      >
+        <Minus size={18} />
+      </button>
+
+      <span className="text-lg font-bold min-w-[30px] text-center">
+        {quantity}
+      </span>
+
+      <button
+        onClick={() => onUpdateQuantity(product.id, 1)}
+        className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/10 active:scale-90 transition-all"
+      >
+        <Plus size={18} />
+      </button>
+
+    </div>
+  );
+})()}
               </motion.div>
             ))}
           </div>

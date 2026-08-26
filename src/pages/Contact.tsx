@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { Instagram, Phone, Mail, ChevronRight, ShoppingBag } from 'lucide-react';
+import { Phone, Mail, ChevronRight } from 'lucide-react';
+import { FaInstagram } from 'react-icons/fa';
 
 export default function Contact() {
   return (
@@ -20,8 +21,8 @@ export default function Contact() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-4">
-            <a href="https://instagram.com/fifibakesss" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-3 p-6 glass-card rounded-3xl group transition-all hover:bg-primary/5">
-              <Instagram size={32} className="text-primary" />
+            <a href= "https://instagram.com/fiascookedfr" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-3 p-6 glass-card rounded-3xl group transition-all hover:bg-primary/5">
+              <FaInstagram size={32} className="text-primary" />
               <span className="font-bold text-sm tracking-tight">Instagram</span>
             </a>
             <a href="tel:+919440823496" className="flex flex-col items-center gap-3 p-6 glass-card rounded-3xl group transition-all hover:bg-primary/5">

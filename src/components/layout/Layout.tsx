@@ -4,21 +4,14 @@ import { Navbar, Footer } from './Navigation';
 import { motion } from 'motion/react';
 
 export const Layout = ({ 
-  cartCount, 
-  user, 
-  onLogout 
+  cartCount
 }: { 
-  cartCount: number; 
-  user: any; 
-  onLogout: () => void 
+  cartCount: number 
 }) => {
   return (
     <div className="min-h-screen flex flex-col paper-texture">
       <Navbar 
-        cartCount={cartCount} 
-        user={user} 
-        onLogout={onLogout} 
-        onAuthClick={() => {}} // Not strictly used for link-based navigation
+        cartCount={cartCount}  
       />
       <main className="flex-grow pt-20">
         <motion.div

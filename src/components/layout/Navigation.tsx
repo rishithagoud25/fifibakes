@@ -11,17 +11,7 @@ import {
 } from 'lucide-react';
 import { IMAGES } from '../../constants';
 
-export const Navbar = ({ 
-  cartCount, 
-  user,
-  onLogout,
-  onAuthClick
-}: { 
-  cartCount: number; 
-  user: any;
-  onLogout: () => void;
-  onAuthClick: (mode: 'login' | 'signup') => void;
-}) => {
+export const Navbar = ({ cartCount }: { cartCount: number }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -75,37 +65,6 @@ export const Navbar = ({
               </span>
             )}
           </Link>
-          
-          {user ? (
-            <div className="hidden sm:flex items-center gap-4">
-              <div className="flex flex-col items-end">
-                <span className="text-[10px] font-black text-primary uppercase tracking-tighter opacity-70">Member</span>
-                <span className="text-sm font-bold text-on-surface leading-tight">{user.name}</span>
-              </div>
-              <button 
-                onClick={onLogout}
-                className="px-5 py-2 bg-surface-container border border-outline-variant/30 text-on-surface-variant font-bold rounded-full hover:bg-surface-container-high active:scale-95 transition-all text-xs uppercase tracking-widest"
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <div className="hidden sm:flex items-center gap-4">
-              <Link 
-                to="/login"
-                className="text-sm font-bold text-on-surface-variant hover:text-primary transition-colors"
-              >
-                Log In
-              </Link>
-              
-              <Link 
-                to="/signup"
-                className="flex items-center gap-2 px-6 py-2.5 bg-primary text-on-primary font-bold rounded-full shadow-soft-cocoa hover:bg-primary/90 active:scale-95 transition-all text-sm shrink-0"
-              >
-                Sign Up
-              </Link>
-            </div>
-          )}
 
           <button 
             className="md:hidden text-primary active:scale-95 transition-transform"
@@ -135,43 +94,6 @@ export const Navbar = ({
                   {link.name}
                 </Link>
               ))}
-              
-              <div className="mt-4 pt-6 border-t border-outline-variant/30 flex flex-col gap-4">
-                {user ? (
-                  <>
-                    <div className="flex flex-col px-1">
-                      <span className="text-[10px] font-black text-primary uppercase tracking-tighter opacity-70">Member</span>
-                      <span className="text-xl font-bold text-on-surface">{user.name}</span>
-                    </div>
-                    <button 
-                      onClick={() => {
-                        onLogout();
-                        setIsMobileMenuOpen(false);
-                      }}
-                      className="w-full py-3.5 bg-surface-container border border-outline-variant/30 text-on-surface-variant font-bold rounded-2xl hover:bg-surface-container-high active:scale-95 transition-all text-sm uppercase tracking-widest"
-                    >
-                      Logout
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <Link 
-                      to="/login"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="w-full py-3 text-lg font-bold text-on-surface-variant hover:text-primary transition-colors text-left px-1"
-                    >
-                      Log In
-                    </Link>
-                    <Link 
-                      to="/signup"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="w-full py-4 bg-primary text-on-primary font-bold rounded-2xl shadow-soft-cocoa hover:bg-primary/90 active:scale-95 transition-all text-center"
-                    >
-                      Sign Up
-                    </Link>
-                  </>
-                )}
-              </div>
             </nav>
           </motion.div>
         )}
@@ -213,7 +135,7 @@ export const Footer = () => {
 
         <div className="flex flex-col items-center gap-4">
           <div className="flex gap-8">
-            <a href="https://instagram.com/fifibakesss" target="_blank" rel="noreferrer" className="text-secondary hover:text-primary transition-colors transform hover:scale-110 duration-200">
+            <a href="https://instagram.com/fiascookedfr" target="_blank" rel="noreferrer" className="text-secondary hover:text-primary transition-colors transform hover:scale-110 duration-200">
               <Instagram size={28} />
             </a>
             <button className="text-secondary hover:text-primary transition-colors transform hover:scale-110 duration-200">

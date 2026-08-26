@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
+
+
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Epilogue", sans-serif;
@@ -63,3 +65,5 @@
     box-shadow: 0 10px 30px rgba(107, 79, 79, 0.08);
   }
 }
+
+
